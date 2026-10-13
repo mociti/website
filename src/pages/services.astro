@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
+const s = [
+ ['AI Integration Advisement','KI-Integrationsberatung','Strategic consulting to assess your current workflows, identify high-ROI automation opportunities, and define the operational roadmap for introducing Agentic AI.','Strategische Beratung zur Analyse Ihrer aktuellen Abläufe, zur Identifizierung von Automatisierungspotenzialen mit hohem ROI und zur Festlegung der operativen Roadmap für die Einführung von Agentic AI.'],
+ ['Creating Agentic AI Teams','Aufbau von Agentic-AI-Teams','Custom development and configuration of specialized AI agents built around your specific departmental needs, complete with defined roles, permissions, and human-in-the-loop safeguards.','Individuelle Entwicklung und Konfiguration spezialisierter KI-Agenten, zugeschnitten auf die Anforderungen Ihrer Abteilungen – mit definierten Rollen, Berechtigungen und Human-in-the-Loop-Sicherungen.'],
+ ['Workflow Integration','Workflow-Integration','Deep technical implementation to connect our Agentic AI teams directly into your existing corporate tools (CRM, ERP, Slack, Teams, custom internal software).','Tiefgehende technische Umsetzung, um unsere Agentic-AI-Teams direkt mit Ihren bestehenden Unternehmenstools zu verbinden (CRM, ERP, Slack, Teams, individuelle interne Software).'],
+ ['Reviewing & Optimizing AI Workflows','Überprüfung & Optimierung von KI-Workflows','Ongoing maintenance, performance audits, and optimization of existing AI agents to ensure they adapt to changing business processes and maintain high accuracy.','Laufende Wartung, Leistungsaudits und Optimierung bestehender KI-Agenten, damit sie sich an veränderte Geschäftsprozesse anpassen und eine hohe Genauigkeit behalten.'],
+];
+---
+<Base title="Services">
+<div class="wrap page">
+<span class="badge">ATaaS</span>
+<h1><T en="Our Services & Packages" de="Unsere Leistungen & Pakete" /></h1>
+<p class="lead" style="margin:0"><T en="We offer flexible engagement structures tailored to your company's AI maturity level. Everything we deliver follows one model: Agentic Teams as a Service – AI teams for Sales, HR, Management, Accounting, Marketing, Support, Operations and Development, run with you and supervised by your people." de="Wir bieten flexible Kooperationsmodelle, abgestimmt auf den KI-Reifegrad Ihres Unternehmens. Alles folgt einem Prinzip: Agentic Teams as a Service – KI-Teams für Vertrieb, HR, Management, Buchhaltung, Marketing, Support, Operations und Entwicklung, gemeinsam mit Ihnen betrieben und von Ihren Mitarbeitenden beaufsichtigt." /></p>
+<div class="grid">{s.map(([en,de,a,bb],i) => <article class="card"><div class="badge">{`0${i+1}`}</div><h2 style="font-size:1.3rem;margin-top:.7rem"><T en={en} de={de} /></h2><p><T en={a} de={bb} /></p></article>)}</div>
+<div class="btns" style="justify-content:flex-start"><a class="btn pri" href={`${b}/contact/`}><T en="Request Consultation" de="Beratung anfragen" /></a></div>
+</div>
+</Base>

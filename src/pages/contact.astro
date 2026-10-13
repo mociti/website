@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+// TODO: replace PLACEHOLDER with the real Formspree form ID (routes to [Contact E-Mail]).
+const action = 'https://formspree.io/f/PLACEHOLDER';
+---
+<Base title="Contact">
+<div class="wrap page">
+<h1><T en="Get in Touch" de="Kontakt aufnehmen" /></h1>
+<p class="lead" style="margin:0 0 2rem"><T en="Ready to explore how Agentic AI can streamline your workflows? Send us a message, and our team will be in touch shortly." de="Bereit herauszufinden, wie Agentic AI Ihre Abläufe vereinfachen kann? Schreiben Sie uns – unser Team meldet sich in Kürze bei Ihnen." /></p>
+<form action={action} method="POST">
+<label><span><T en="Name" de="Name" /> *</span><input name="name" required autocomplete="name" /></label>
+<label><span><T en="Company Name" de="Unternehmen" /> *</span><input name="company" required autocomplete="organization" /></label>
+<label><span><T en="Corporate Email Address" de="Geschäftliche E-Mail-Adresse" /> *</span><input type="email" name="email" required autocomplete="email" /></label>
+<label><span><T en="Phone Number (optional)" de="Telefonnummer (optional)" /></span><input type="tel" name="phone" autocomplete="tel" /></label>
+<label><span><T en="Message / Inquiry Details" de="Nachricht / Details Ihrer Anfrage" /> *</span><textarea name="message" rows="6" required></textarea></label>
+<p style="color:var(--mut);margin:0;font-size:.9rem"><T en="* Required. We use your data only to answer your inquiry (see Privacy Policy)." de="* Pflichtfeld. Wir verwenden Ihre Daten ausschließlich zur Beantwortung Ihrer Anfrage (siehe Datenschutzerklärung)." /></p>
+<div><button class="btn pri" type="submit"><T en="Request Consultation" de="Beratung anfragen" /></button></div>
+</form>
+</div>
+</Base>

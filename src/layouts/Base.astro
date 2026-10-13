@@ -1,0 +1,47 @@
+---
+import T from '../components/T.astro';
+import '../styles.css';
+const { title, desc = 'mociti – Agentic AI Teams as a Service (ATaaS)' } = Astro.props;
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
+const p = Astro.url.pathname.replace(b, '').replace(/\/$/, '') || '/';
+const nav = [['/', 'Home', 'Start'], ['/services', 'Services', 'Leistungen'], ['/use-cases', 'Use Cases', 'Anwendungsfälle'], ['/contact', 'Contact', 'Kontakt']];
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{title} | mociti</title><meta name="description" content={desc} />
+<link rel="icon" type="image/png" href={`${b}/favicon.png`} /><link rel="apple-touch-icon" href={`${b}/apple-touch-icon.png`} />
+<meta property="og:title" content={`${title} | mociti`} /><meta property="og:description" content={desc} />
+<meta property="og:image" content={`https://mociti.github.io${b}/og.png`} /><meta name="twitter:card" content="summary_large_image" />
+<script is:inline>
+(function(){var l=null;try{l=localStorage.getItem('mociti-lang')}catch(e){}
+if(l!=='en'&&l!=='de'){l=((navigator.languages&&navigator.languages[0])||navigator.language||'en').toLowerCase().indexOf('de')===0?'de':'en'}
+document.documentElement.lang=l;document.documentElement.dataset.lang=l;})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main"><T en="Skip to content" de="Zum Inhalt springen" /></a>
+<header class="nav"><div class="wrap navin">
+<a class="brand" href={`${b}/`}><img src={`${b}/logo-192.webp`} width="44" height="44" alt="mociti logo" /><span>MOCITI</span></a>
+<nav aria-label="Main"><ul>
+{nav.map(([h, en, de]) => <li><a href={`${b}${h === '/' ? '/' : h + '/'}`} aria-current={p === h ? 'page' : undefined}><T en={en} de={de} /></a></li>)}
+</ul></nav>
+<div class="langsw" role="group" aria-label="Language / Sprache">
+<button type="button" data-set="en">EN</button><button type="button" data-set="de">DE</button></div>
+</div></header>
+<main id="main"><slot /></main>
+<footer class="foot"><div class="wrap footin">
+<span>© {year} mociti</span>
+<a href={`${b}/impressum/`}><T en="Imprint (Impressum)" de="Impressum" /></a>
+<a href={`${b}/privacy/`}><T en="Privacy Policy" de="Datenschutzerklärung" /></a>
+<a href="#" aria-disabled="true" title="TODO: LinkedIn URL">LinkedIn</a>{/* TODO: real LinkedIn URL */}
+</div></footer>
+<script is:inline>
+(function(){function s(l){var d=document.documentElement;d.lang=l;d.dataset.lang=l;try{localStorage.setItem('mociti-lang',l)}catch(e){}
+document.querySelectorAll('[data-set]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.set===l)})}
+document.querySelectorAll('[data-set]').forEach(function(x){x.addEventListener('click',function(){s(x.dataset.set)})});
+s(document.documentElement.dataset.lang);})();
+</script>
+</body></html>

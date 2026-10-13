@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
+const teams = [
+ ['📈','Sales','Vertrieb','Researches prospects, drafts tailored outreach and keeps your CRM clean.','Recherchiert Interessenten, entwirft passgenaue Ansprache und hält Ihr CRM sauber.'],
+ ['🧑‍🤝‍🧑','HR','Personal (HR)','Sources candidates, prepares interviews and runs onboarding checklists.','Findet Kandidaten, bereitet Interviews vor und steuert Onboarding-Checklisten.'],
+ ['🧭','Management','Management','Prepares briefings, board reports and meeting packs so leaders can decide faster.','Erstellt Briefings, Berichte und Meeting-Unterlagen, damit Führungskräfte schneller entscheiden.'],
+ ['🧾','Accounting','Buchhaltung','Extracts invoice data, matches purchase orders and prepares the month-end close.','Liest Rechnungen aus, gleicht Bestellungen ab und bereitet den Monatsabschluss vor.'],
+ ['📣','Marketing','Marketing','Turns briefs into on-brand drafts and plans your content calendar.','Macht aus Briefings markenkonforme Entwürfe und plant Ihren Content-Kalender.'],
+ ['💬','Customer Support','Kundenservice','Classifies tickets, drafts answers from your docs and escalates sensitive cases.','Klassifiziert Anfragen, entwirft Antworten aus Ihrer Dokumentation und eskaliert heikle Fälle.'],
+ ['⚙️','Operations','Operations','Monitors processes, coordinates handovers and flags bottlenecks early.','Überwacht Abläufe, koordiniert Übergaben und meldet Engpässe frühzeitig.'],
+ ['💻','Software Development','Softwareentwicklung','Plans, drafts code and tests, and prepares pull requests for your developers.','Plant, entwirft Code und Tests und bereitet Pull Requests für Ihre Entwickler vor.'],
+];
+---
+<Base title="Agentic AI Teams as a Service">
+<section class="hero wrap">
+<img src={`${b}/logo-512.webp`} width="512" height="512" alt="mociti logo: neon ring with a gradient M formed by three people, wordmark MOCITI, tagline AI teams for what's next" />
+<div><span class="badge">ATaaS · Agentic Teams as a Service</span></div>
+<h1><T en="Agentic AI Teams as a Service" de="Agentic AI Teams as a Service" /></h1>
+<p class="lead"><T en="We build, deploy, and manage specialized AI agent teams that integrate seamlessly into your existing corporate workflows—amplifying your human workforce without replacing human control." de="Wir entwickeln, implementieren und betreuen spezialisierte KI-Agenten-Teams, die sich nahtlos in Ihre bestehenden Unternehmensabläufe einfügen – sie verstärken Ihre Belegschaft, ohne die menschliche Kontrolle zu ersetzen." /></p>
+<div class="btns"><a class="btn pri" href={`${b}/services/`}><T en="Explore Our Services" de="Unsere Leistungen entdecken" /></a>
+<a class="btn" href={`${b}/use-cases/`}><T en="View Use Cases" de="Anwendungsfälle ansehen" /></a></div>
+</section>
+<section class="wrap center">
+<span class="badge">ATaaS</span>
+<h2><T en="A team for every department" de="Ein Team für jede Abteilung" /></h2>
+<p class="lead"><T en="ATaaS isn't just for developers. We assemble AI agent teams for any part of your business – each with clear roles, permissions and a human who approves what matters." de="ATaaS ist nicht nur etwas für Entwickler. Wir stellen KI-Agenten-Teams für jeden Unternehmensbereich zusammen – jeweils mit klaren Rollen, Berechtigungen und einem Menschen, der das Wichtige freigibt." /></p>
+<div class="grid">{teams.map(([i,en,de,den,dde]) => <article class="card"><div class="ic" aria-hidden="true">{i}</div><h3><T en={en} de={de} /></h3><p><T en={den} de={dde} /></p></article>)}</div>
+</section>
+<section class="wrap center">
+<h2><T en="Humans stay in control" de="Der Mensch behält die Kontrolle" /></h2>
+<p class="lead"><T en="We agree upfront which actions your AI team handles on its own and which always need human approval. Your people make the decisions – the agents do the groundwork." de="Wir legen vorab fest, welche Aufgaben Ihr KI-Team selbstständig erledigt und welche immer eine menschliche Freigabe brauchen. Ihre Mitarbeitenden entscheiden – die Agenten erledigen die Vorarbeit." /></p>
+<div class="btns"><a class="btn pri" href={`${b}/contact/`}><T en="Request Consultation" de="Beratung anfragen" /></a></div>
+</section>
+</Base>

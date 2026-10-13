@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
+// TODO: final text to be provided/reviewed by legal counsel.
+---
+<Base title="Privacy Policy">
+<div class="wrap page prose">
+<h1><T en="Privacy Policy" de="Datenschutzerklärung" /></h1>
+<p class="ph"><T en="[Placeholder – final text to be reviewed by legal counsel]" de="[Platzhalter – endgültiger Text wird rechtlich geprüft]" /></p>
+<h2 style="font-size:1.2rem"><T en="1. Data controller" de="1. Verantwortliche Stelle" /></h2>
+<p><T en="The controller responsible for data processing is the company named in our " de="Verantwortlich für die Datenverarbeitung ist das in unserem " /><a href={`${b}/impressum/`}>Impressum</a><T en=" (name, address and contact details)." de=" genannte Unternehmen (Name, Anschrift und Kontaktdaten)." /></p>
+<h2 style="font-size:1.2rem"><T en="2. Types of data collected" de="2. Erhobene Daten" /></h2>
+<ul><li><T en="Server log files (e.g. IP address, browser type, time of access), processed by our hosting provider GitHub Pages." de="Server-Logfiles (z. B. IP-Adresse, Browsertyp, Zugriffszeit), verarbeitet durch unseren Hosting-Anbieter GitHub Pages." /></li>
+<li><T en="Contact form data: name, company, email address, optional phone number and your message (processed via Formspree)." de="Kontaktformulardaten: Name, Unternehmen, E-Mail-Adresse, optionale Telefonnummer und Ihre Nachricht (verarbeitet über Formspree)." /></li>
+<li><T en="Your language preference (EN/DE), stored only locally in your browser." de="Ihre Spracheinstellung (EN/DE), ausschließlich lokal in Ihrem Browser gespeichert." /></li></ul>
+<h2 style="font-size:1.2rem"><T en="3. Purpose of processing" de="3. Zweck der Verarbeitung" /></h2>
+<p><T en="We process your data to operate this website securely and to respond to your inquiries (Art. 6(1)(b) and (f) GDPR)." de="Wir verarbeiten Ihre Daten, um diese Website sicher zu betreiben und Ihre Anfragen zu beantworten (Art. 6 Abs. 1 lit. b und f DSGVO)." /></p>
+<h2 style="font-size:1.2rem"><T en="4. Your rights" de="4. Ihre Rechte" /></h2>
+<p><T en="You have the right to access, rectify and delete your data, to restrict or object to processing, to data portability, to withdraw consent at any time, and to lodge a complaint with a supervisory authority." de="Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten, auf Einschränkung der Verarbeitung, auf Widerspruch, auf Datenübertragbarkeit, auf jederzeitigen Widerruf Ihrer Einwilligung sowie auf Beschwerde bei einer Aufsichtsbehörde." /></p>
+</div>
+</Base>
